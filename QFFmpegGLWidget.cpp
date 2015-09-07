@@ -90,10 +90,16 @@ void QFFmpegGLWidget::initializeGL()
     glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
 
     glEnable(GL_TEXTURE_2D);
-    glShadeModel(GL_SMOOTH);
+    
+    /* The following three commented lines if uncommented generate following errors:
+     * undefined reference to `_imp__glShadeModel@4'
+     * undefined reference to `_imp__glClearDepth@8'
+     * bad reloc address 0x20 in section `.eh_frame'
+     */
+   // glShadeModel(GL_SMOOTH);
     glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
-    glClearDepth(1.0f);
-    glEnable(GL_DEPTH_TEST);
+   // glClearDepth(1.0f);
+   // glEnable(GL_DEPTH_TEST);
 
     glDepthFunc(GL_LEQUAL);
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
