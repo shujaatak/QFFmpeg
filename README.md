@@ -1,2 +1,2 @@
 # QFFmpeg
-QFFmpeg is the Qt's wrapper of ffmpeg.
+QFFmpeg is the Qt's wrapper of FFmpeg with QOpenGLWidget support. 
